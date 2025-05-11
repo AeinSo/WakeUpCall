@@ -1,0 +1,288 @@
+/* Base styles */
+@font-face {
+  font-family: 'YourCustomFont';
+  src: url('fonts/your-font.woff2') format('woff2'),
+       url('fonts/your-font.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Typography */
+.logo {
+  font-family: 'YourCustomFont', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 2.5px solid #6D859F;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  opacity: 0.7;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  align-items: center;
+  font-family: 'YourCustomFont', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+  font-family: 'Open Sans', sans-serif;
+  border-bottom: 1px solid #000000;
+}
+
+.nav-link:hover {
+  color: #666;
+}
+
+/* Buttons */
+.cta-button,
+.sign-up-btn,
+form button {
+  padding: 0.7rem 1.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover,
+.sign-up-btn:hover,
+form button:hover {
+  background-color: #6D859F;
+  opacity: 0.7;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 4rem;
+  gap: 2rem;
+}
+
+.hero-text {
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 5rem;
+  flex: 1;
+}
+
+.hero-text h2 {
+  font-size: 3rem;
+}
+
+.hero-text p {
+  font-size: 2rem;
+}
+
+.hero-image img {
+  width: 600px;
+  border-radius: 16px;
+}
+
+/* Info Section */
+.info-section {
+  font-family: 'Open Sans', sans-serif;
+  background-image: url('tired-person.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4rem 5rem;
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 400px;
+}
+
+.info-card {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  color: #000;
+}
+
+.info-card h3 {
+  font-size: 1.5rem;
+}
+
+/* Forms */
+.form-wrapper,
+.sleep-container,
+.risk-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #444;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Consent Container */
+.consent-container {
+  max-width: 800px;
+  margin: 4rem auto;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  transition: box-shadow 0.3s ease;
+}
+
+.consent-container:hover {
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+.consent-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.consent-container h3 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.consent-container p,
+.consent-container li {
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.consent-container ul {
+  padding-left: 1.5rem;
+}
+
+/* Result Page */
+.result-container {
+  max-width: 600px;
+  margin: 5rem auto;
+  background-color: #ffffff;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.risk-label {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.low { color: #2ecc71; }
+.moderate { color: #f39c12; }
+.high { color: #e74c3c; }
+
+.result-message {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #444;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem;
+  background-color: #6D859F;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer a:hover {
+  opacity: 0.7;
+}
+
+.footer-right span {
+  color: #fff;
+  font-weight: lighter;
+}
+
+.assessment{
+  font-family: 'Open Sans', sans-serif;
+}
+
