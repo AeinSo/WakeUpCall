@@ -1,55 +1,345 @@
-<!DOCTYPE html>
-<html lang="en">
+/* ─────────────────────────────── */
+/* GLOBAL / SHARED STYLES (ALL PAGES) */
+/* ─────────────────────────────── */
+@font-face {
+  font-family: 'YourCustomFont';
+  src: url('fonts/your-font.woff2') format('woff2'),
+       url('fonts/your-font.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sleep Habits</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f4f4f4;
+}
 
 
-<header>
-  <nav class="navbar">
-    <div class="navbar-left">
-      <span class="logo">WakeUp Call</span>
-    </div>
-    <div class="navbar-right">
-      <ul class="navbar-links">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="#" class="nav-link">About Sleep Apnea</a></li>
-      </ul>
-      <button class="sign-up-btn">Sign Up</button>
-    </div>
-  </nav>
-</header>
 
-<body>
-  <div class="form-wrapper">
-    <h2>Sleep Habits</h2>
-    <p>Your sleep patterns help assess potential risks.</p>
+/* ─────────────────────────────── */
+/* HEADER (Used in: ALL PAGES) */
+/* ─────────────────────────────── */
+.logo {
+  font-family: 'YourCustomFont', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #333;
+}
 
-    <form action="lifestyle.html" method="get">
-      <!-- Sleep duration -->
-      <label for="sleepHours">On average, how many hours of sleep do you get per night?</label>
-      <input type="number" id="sleepHours" name="sleepHours" required min="0" step="0.5" />
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 2.5px solid #6D859F;
+}
 
-      <!-- Sleep quality -->
-      <label for="sleepQuality">Rate your sleep quality (1–10, where 10 = restful)</label>
-      <input type="number" id="sleepQuality" name="sleepQuality" required min="1" max="10" />
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
 
-      <!-- Night disturbances -->
-      <label for="snoring">Do you experience frequent nighttime awakenings or snoring?</label>
-      <select id="snoring" name="snoring" required>
-        <option value="">Select</option>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select>
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  align-items: center;
+  font-family: 'YourCustomFont', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
 
-      <!-- Submit -->
-      <button type="submit" a href="lifestyle.html">Proceed</button>
-    </form>
-  </div>
-</body>
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+  font-family: 'Open Sans', sans-serif;
+  border-bottom: 1px solid #000000;
+}
 
-</html>
+.nav-link:hover {
+  color: #666;
+}
+
+.navbar-right {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+  align-items: center;
+  opacity: 0.7;
+}
+
+.sign-up-btn {
+  padding: 0.5rem 1.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
+
+.sign-up-btn:hover {
+  background-color: #6D859F;
+  opacity: 0.7;
+}
+
+/* ─────────────────────────────── */
+/* HERO SECTION (Used in: index.html) */
+/* ─────────────────────────────── */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 4rem;
+  gap: 2rem;
+}
+
+.hero-text {
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 5rem;
+  flex: 1;
+}
+
+.hero-text h2 {
+  font-size: 3rem;
+}
+
+.hero-text p {
+  font-size: 2rem;
+}
+
+.hero-image img {
+  width: 600px;
+  border-radius: 16px;
+}
+
+.cta-button {
+  padding: 0.5rem 1.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: #6D859F;
+  opacity: 0.7;
+}
+
+/* ─────────────────────────────── */
+/* INFO SECTION (Used in: index.html) */
+/* ─────────────────────────────── */
+.info-section {
+  font-family: 'Open Sans', sans-serif;
+  background-image: url('tired-person.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4rem 5rem;
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 400px;
+}
+
+.info-card {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  color: #000;
+}
+
+.info-card h3 {
+  font-size: 1.5rem;
+}
+
+/* ─────────────────────────────── */
+/* FOOTER (Used in: ALL PAGES) */
+/* ─────────────────────────────── */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem;
+  background-color: #6D859F;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer a:hover {
+  opacity: 0.7;
+}
+
+.footer-right span {
+  color: #fff;
+  font-weight: lighter;
+}
+
+/* ─────────────────────────────── */
+/* CONSENT PAGE (Used in: consent.html) */
+/* ─────────────────────────────── */
+.consent-container {
+  max-width: 800px;
+  margin: 4rem auto;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  transition: box-shadow 0.3s ease;
+}
+
+.consent-container:hover {
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+.consent-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.consent-container h3 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.consent-container p,
+.consent-container li {
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.consent-container ul {
+  padding-left: 1.5rem;
+}
+
+.consent-button {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
+/* ─────────────────────────────── */
+/* FORM SECTIONS (Used in: demographics.html, sleep.html, lifestyle.html, health.html) */
+/* ─────────────────────────────── */
+.sleep-container,
+.risk-container,
+.form-wrapper {
+  width: 90%;
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sleep-container h2,
+.risk-container h2,
+.form-wrapper h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Form Inputs & Labels */
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #444;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Form Submit Button (Used across all forms) */
+form button {
+  margin-top: 2rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #6D859F;
+}
+
+/* ─────────────────────────────── */
+/* RESULT PAGE (Used in: result.html) */
+/* ─────────────────────────────── */
+.result-container {
+  max-width: 600px;
+  margin: 5rem auto;
+  background-color: #ffffff;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.risk-label {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.low { color: #2ecc71; }
+.moderate { color: #f39c12; }
+.high { color: #e74c3c; }
+
+.result-message {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #444;
+}
