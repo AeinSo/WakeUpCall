@@ -4,52 +4,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WakeUp Call</title>
+  <title>Demographic Information</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
-
-  <!-- Header Section -->
-  <header>
-    <header>
-      <nav class="navbar">
-        <ul>
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="#apnea" class="nav-link">About Sleep Apnea</a></li>
-          <li><a href="aboutus.html" class="nav-link">Meet the Team</a></li>
-        </ul>
-      </nav>
-    </header>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="#apnea" class="nav-link">About Sleep Apnea</a></li>
+      <li><a href="aboutus.html" class="nav-link">Meet the Team</a></li>
+    </ul>
+  </nav>
 
   <!-- Main Content -->
   <div class="form-grid-container">
     <!-- Left Side Banner -->
     <div class="left-banner">
-      <h1>Before You Begin</h1>
-      <i class="fa-solid fa-circle-exclamation"></i>
+      <h1>Step 1: Demographics</h1>
+      <i class="fa-solid fa-circle-user"></i>
     </div>
 
-    <!-- Right Side Content -->
+
+    <!-- Right Side Form -->
     <div class="form-wrapper">
-      <h2>Introduction & Disclaimer</h2>
-      <p>This questionnaire is designed to evaluate potential risk factors associated with sleep health, most especially sleep apnea. Your responses will help identify habits or symptoms that may impact your sleep quality and overall well-being.</p>
+      <h2>Demographic Information</h2>
+      <p>Help us understand your background for better risk evaluation.</p>
 
-      <h3>What We'll Ask About:</h3>
-      <ul>
-        <li>Basic demographics (e.g., age, gender, occupation)</li>
-        <li>Sleep habits (duration, quality, disturbances)</li>
-        <li>Lifestyle factors (physical activity, stress levels, daily steps)</li>
-        <li>Health indicators (BMI, blood pressure, heart rate)</li>
-      </ul>
+      <form action="sleep.html" method="get">
+        <!-- Sex at Birth -->
+        <label>Sex at Birth</label>
+        <div class="radio-group">
+          <label><input type="radio" name="sex" value="male" required> Male</label>
+          <label><input type="radio" name="sex" value="female" required> Female</label>
+        </div>
 
-      <h3>Important Notes:</h3>
-      <p>This is not a diagnostic tool—it assesses risk based on self-reported data.</p>
-      <p>If results suggest elevated risk, we recommend consulting a healthcare professional.</p>
-      <p>Your responses will remain confidential and used only for this assessment.</p>
+        <!-- Age -->
+        <label for="age">How old are you?</label>
+        <input type="number" id="age" name="age" required />
 
-      <a href="demographic.html" class="cta-button"><span>I Consent & Begin Assessment</span></a>
+        <!-- Occupation -->
+        <label for="occupation">What is your primary occupation?</label>
+        <select id="occupation" name="occupation" required>
+          <option value="">Select Occupation</option>
+          <option value="student">Accountant</option>
+          <option value="employed">Doctor</option>
+          <option value="freelancer">Lawyer</option>
+          <option value="unemployed">Manager</option>
+          <option value="retired">Nurse</option>
+          <option value="retired">Salesperson</option>
+          <option value="retired">Scientist</option>
+          <option value="retired">Software Engineer</option>
+          <option value="retired">Teacher</option>
+          <option value="other">Other</option>
+        </select>
+
+        <!-- Submit Button -->
+        <div class="form-footer">
+          <button type="submit" class="cta-button"><span>Proceed</span></button>
+        </div>
+      </form>
     </div>
   </div>
 
