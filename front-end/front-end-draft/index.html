@@ -2,62 +2,96 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WakeUp Call</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
-
-  <!-- Header Section -->
   <header>
     <nav class="navbar">
-      <div class="navbar-left">
-        <span class="logo">WakeUp Call</span>
-      </div>
-      <div class="navbar-right">
-        <ul class="navbar-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="#" class="nav-link">About Sleep Apnea</a></li>
-          <li><a href="aboutus.html" class="nav-link">Meet the Team</a></li>
-        </ul>
-        <button class="sign-up-btn">Sign Up</button>
-      </div>
+      <ul>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#apnea" class="nav-link">About Sleep Apnea</a></li>
+        <li><a href="#team" class="nav-link">Meet the Team</a></li>
+      </ul>
     </nav>
   </header>
 
-  <!-- Main Content -->
-  <div class="form-grid-container">
-    <!-- Left Side Banner -->
-    <div class="left-banner">
-      <h1>Before You Begin</h1>
-      <i class="fa-solid fa-circle-exclamation"></i>
+  <main>
+    <section class="fullscreen-hero">
+      <h1>
+        <span class="word">WakeUp</span>
+        <span class="word superscript">Call</span>
+      </h1>
+    </section>
+
+    <section class="hero-section">
+      <div id="apnea" class="hero-text">
+        <h2>Philippine Sleep Health & Apnea Screening Initiative</h2>
+        <p>An evidence-based web tool assessing OSA risk through lifestyle and biometric factors.</p>
+        <a href="consent.html" class="cta-button"><span>Get Started</span></a>
+      </div>
+      <div class="hero-image">
+        <img src="sleeping-person.jpg" alt="Person sleeping in bed">
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="info-card">
+        <h3>Your Fatigue Might Be More Than Just 'Puyat'</h3>
+        <p>
+          An estimated 1 in 10 Filipinos unknowingly battles sleep apnea (Philippine Society of Sleep Medicine, 2022)—a dangerous condition that causes breathing during sleep. Left untreated, it silently damages your heart, brain, and daily productivity. But here's hope: diagnosis is simple, and treatment can transform your life.
+        </p>
+      </div>
+    </section>
+
+    <section id="team" class="team-section">
+      <h2 class="section-title">Meet the Team</h2>
+      <p class="section-subtitle">The minds behind the WakeUp Call initiative</p>
+
+      <div class="profile-container">
+        <div class="profile-card">
+          <img src="micka.JPG" alt="image1" class="profile-icon" />
+          <div class="profile-name">Alyanna Mickaela Olviga</div>
+          <div class="profile-position">Researcher</div>
+        </div>
+        <div class="profile-card">
+          <img src="brandon.jpg" alt="image2" class="profile-icon" />
+          <div class="profile-name">Brandon Seducon</div>
+          <div class="profile-position">Researcher</div>
+        </div>
+        <div class="profile-card">
+          <img src="ayen.jpg" alt="image3" class="profile-icon" />
+          <div class="profile-name">Lauren Miracle Sotong</div>
+          <div class="profile-position">Researcher</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <span>©2025 WakeUp Call</span>
     </div>
-
-    <!-- Right Side Content -->
-    <div class="form-wrapper">
-      <h2>Introduction & Disclaimer</h2>
-      <p>This questionnaire is designed to evaluate potential risk factors associated with sleep health, most especially sleep apnea. Your responses will help identify habits or symptoms that may impact your sleep quality and overall well-being.</p>
-
-      <h3>What We'll Ask About:</h3>
-      <ul>
-        <li>Basic demographics (e.g., age, gender, occupation)</li>
-        <li>Sleep habits (duration, quality, disturbances)</li>
-        <li>Lifestyle factors (physical activity, stress levels, daily steps)</li>
-        <li>Health indicators (BMI, blood pressure, heart rate)</li>
-      </ul>
-
-      <h3>Important Notes:</h3>
-      <p>This is not a diagnostic tool—it assesses risk based on self-reported data.</p>
-      <p>If results suggest elevated risk, we recommend consulting a healthcare professional.</p>
-      <p>Your responses will remain confidential and used only for this assessment.</p>
-
-      <a href="demographic.html" class="cta-button"><span>I Consent & Begin Assessment</span></a>
+    <div class="footer-right">
+      <a href="#">Privacy Policy</a>
+      <span>|</span>
+      <a href="#">Contact Us</a>
+      <span>|</span>
+      <a href="#">FAQ</a>
     </div>
-  </div>
+  </footer>
 
+  <script src="scripts.js"></script>
 </body>
 
 </html>
