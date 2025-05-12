@@ -25,7 +25,7 @@ body {
   font-family: 'YourCustomFont', sans-serif;
   font-weight: 600;
   font-size: 2rem;
-  color: #333;
+  color: var(--shades); /* to match the white color on dark background */
 }
 
 .navbar {
@@ -78,6 +78,7 @@ body {
   opacity: 0.7;
 }
 
+
 .sign-up-btn {
   padding: 0.5rem 1.5rem;
   background-color: #333;
@@ -92,8 +93,9 @@ body {
 
 .sign-up-btn:hover {
   background-color: #6D859F;
-  opacity: 0.7;
+  opacity: 0.8;
 }
+
 
 /* ─────────────────────────────── */
 /* HERO SECTION (Used in: index.html) */
@@ -127,21 +129,73 @@ body {
 }
 
 .cta-button {
+  position: relative;
+  z-index: 2; 
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.5rem 1.5rem;
   background-color: #333;
   color: white;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-radius: 5px;
   font-family: 'Open Sans', sans-serif;
   text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
-  background-color: #6D859F;
-  opacity: 0.7;
+.cta-button::after {
+  content: "";
+  width: 0%;
+  height: 100%;
+  background: #6D859F;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+  top: 0;
+  z-index: 1;
 }
+
+.cta-button:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+.cta-button span {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  z-index: 2; /* Ensure the text stays on top */
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover span {
+  color: #333;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
 
 /* ─────────────────────────────── */
 /* INFO SECTION (Used in: index.html) */
@@ -211,75 +265,88 @@ body {
 /* ─────────────────────────────── */
 /* CONSENT PAGE (Used in: consent.html) */
 /* ─────────────────────────────── */
-.consent-container {
-  max-width: 800px;
-  margin: 4rem auto;
-  background-color: #ffffff;
-  padding: 2.5rem;
-  border-radius: 50px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  color: #333;
-  font-family: 'Open Sans', sans-serif;
-  transition: box-shadow 0.3s ease;
+.form-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  max-width: 900px;
+  margin: 3rem auto;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
-.consent-container:hover {
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+.left-banner {
+  background-color: #6D859F;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.consent-container h1 {
+.left-banner h1 {
+  font-family: 'YourCustomFont', sans-serif;
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: #333;
 }
 
-.consent-container h3 {
-  font-size: 1.2rem;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  font-weight: 600;
+.left-banner img {
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+  filter: sepia(20%);
 }
 
-.consent-container p,
-.consent-container li {
-  line-height: 1.6;
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
-}
-
-.consent-container ul {
-  padding-left: 1.5rem;
-}
-
-.consent-button {
-  display: inline-block;
-  margin-top: 2rem;
-}
 
 /* ─────────────────────────────── */
 /* FORM SECTIONS (Used in: demographics.html, sleep.html, lifestyle.html, health.html) */
 /* ─────────────────────────────── */
-.sleep-container,
-.risk-container,
-.form-wrapper {
-  width: 90%;
-  max-width: 600px;
+.form-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  max-width: 900px;
   margin: 3rem auto;
-  padding: 2rem;
   border-radius: 20px;
-  background-color: #ffffff;
+  background-color: #d0d0d06d;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
-.sleep-container h2,
-.risk-container h2,
+.left-banner {
+  background-color: #6D859F;
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-banner h1 {
+  font-family: 'YourCustomFont', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.left-banner img {
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+  filter: sepia(20%);
+}
+
+.form-wrapper {
+  padding: 2rem;
+}
+
 .form-wrapper h2 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
   color: #333;
 }
 
-/* Form Inputs & Labels */
 form label {
   display: block;
   margin-top: 1rem;
@@ -297,7 +364,6 @@ form select {
   font-size: 1rem;
 }
 
-/* Form Submit Button (Used across all forms) */
 form button {
   margin-top: 2rem;
   padding: 0.7rem 1.5rem;
@@ -314,13 +380,38 @@ form button:hover {
   background-color: #6D859F;
 }
 
+/* Align radio buttons in a row */
+.radio-group {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Optional spacing and style fix for radio labels */
+.radio-group label {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Align the button to bottom right */
+.form-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+
+
 /* ─────────────────────────────── */
 /* RESULT PAGE (Used in: result.html) */
 /* ─────────────────────────────── */
 .result-container {
   max-width: 600px;
   margin: 5rem auto;
-  background-color: #ffffff;
+  background-color: #d0d0d06d;
   padding: 3rem;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
