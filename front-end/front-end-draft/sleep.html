@@ -8,48 +8,60 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 
-
-<header>
-  <nav class="navbar">
-    <div class="navbar-left">
-      <span class="logo">WakeUp Call</span>
-    </div>
-    <div class="navbar-right">
-      <ul class="navbar-links">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="#" class="nav-link">About Sleep Apnea</a></li>
-      </ul>
-      <button class="sign-up-btn">Sign Up</button>
-    </div>
-  </nav>
-</header>
-
 <body>
-  <div class="form-wrapper">
-    <h2>Sleep Habits</h2>
-    <p>Your sleep patterns help assess potential risks.</p>
+  <!-- Header Section -->
+  <header>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <span class="logo">WakeUp Call</span>
+      </div>
+      <div class="navbar-right">
+        <ul class="navbar-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="#" class="nav-link">About Sleep Apnea</a></li>
+        </ul>
+        <button class="sign-up-btn">Sign Up</button>
+      </div>
+    </nav>
+  </header>
 
-    <form action="lifestyle.html" method="get">
-      <!-- Sleep duration -->
-      <label for="sleepHours">On average, how many hours of sleep do you get per night?</label>
-      <input type="number" id="sleepHours" name="sleepHours" required min="0" step="0.5" />
+  <!-- Main Content Section -->
+  <div class="form-grid-container">
+    <!-- Left Side Banner -->
+    <div class="left-banner">
+      <h1>Sleep Habits</h1>
+      <img src="sleep-icon.png" alt="Sleep Icon" />
+    </div>
 
-      <!-- Sleep quality -->
-      <label for="sleepQuality">Rate your sleep quality (1–10, where 10 = restful)</label>
-      <input type="number" id="sleepQuality" name="sleepQuality" required min="1" max="10" />
+    <!-- Right Side Form -->
+    <div class="form-wrapper">
+      <h2>Your sleep patterns help assess potential risks.</h2>
 
-      <!-- Night disturbances -->
-      <label for="snoring">Do you experience frequent nighttime awakenings or snoring?</label>
-      <select id="snoring" name="snoring" required>
-        <option value="">Select</option>
-        <option value="yes">Yes</option>
-        <option value="no">No</option>
-      </select>
+      <form action="lifestyle.html" method="get">
+        <!-- Sleep Hours Input -->
+        <label for="sleepHours">How many hours of sleep do you get?</label>
+        <input type="number" id="sleepHours" name="sleepHours" required min="0" step="0.5" />
 
-      <!-- Submit -->
-      <button type="submit" a href="lifestyle.html">Proceed</button>
-    </form>
+        <!-- Sleep Quality Input -->
+        <label for="sleepQuality">Rate your sleep quality (1–10)</label>
+        <input type="number" id="sleepQuality" name="sleepQuality" required min="1" max="10" />
+
+        <!-- Snoring or Night Waking Dropdown -->
+        <label for="snoring">Do you snore or wake up at night?</label>
+        <select id="snoring" name="snoring" required>
+          <option value="">Select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <!-- Submit Button -->
+        <div class="form-footer">
+          <button type="submit" class="cta-button"><span>Proceed</span></button>
+        </div>
+      </form>
+    </div>
   </div>
+
 </body>
 
 </html>
